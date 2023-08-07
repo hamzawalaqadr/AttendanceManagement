@@ -56,6 +56,18 @@ public class User {
         return passCode;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "user_Id=" + user_Id +
+                ", fullName='" + fullName + '\'' +
+                ", userName='" + userName + '\'' +
+                ", passCode='" + passCode + '\'' +
+                ", is_Approver=" + is_Approver +
+                ", department=" + department +
+                '}';
+    }
+
     public void setPassCode(String passCode) {
         this.passCode = passCode;
     }

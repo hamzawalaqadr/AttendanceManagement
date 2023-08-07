@@ -1,12 +1,39 @@
 package Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Department {
     @Id
-    int department_id;
+    private int department_id;
+    private String name;
+    @OneToOne
+    @JoinColumn(name="head_id")
+    private User user;
+    public Department(int department_id, String name) {
+        this.department_id = department_id;
+        this.name = name;
+    }
+    public Department() {}
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "department_id=" + department_id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    public int getDepartment_id() {
+        return department_id;
+    }
 
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
