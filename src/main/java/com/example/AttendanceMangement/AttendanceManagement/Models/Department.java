@@ -1,8 +1,9 @@
-package Models;
+package com.example.AttendanceMangement.AttendanceManagement.Models;
 
 import jakarta.persistence.*;
 
 @Entity
+@Table(name="intern_department")
 public class Department {
     @Id
     private int department_id;

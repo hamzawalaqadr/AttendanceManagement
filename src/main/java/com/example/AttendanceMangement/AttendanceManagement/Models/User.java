@@ -1,17 +1,15 @@
-package Models;
+package com.example.AttendanceMangement.AttendanceManagement.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
+@Table(name="intern_users")
 @Entity
 public class User {
     @Id
     private int user_Id;
-    private String fullName;
-    private String userName;
-    private String passCode;
+    private String fullname;
+    private String username;
+    private String passcode;
     private int is_Approver;
 
     @OneToOne
@@ -21,9 +19,9 @@ public class User {
     public User() {
     }
     public User(String fullName, String userName, String passCode, int department_Id, int is_Approver) {
-        this.fullName = fullName;
-        this.userName = userName;
-        this.passCode = passCode;
+        this.fullname = fullName;
+        this.username = userName;
+        this.passcode = passCode;
 //        this.department_Id = department_Id;
         this.is_Approver = is_Approver;
     }
@@ -37,39 +35,39 @@ public class User {
     }
 
     public String getFullName() {
-        return fullName;
+        return fullname;
     }
 
     public void setFullName(String fullName) {
-        this.fullName = fullName;
+        this.fullname = fullName;
     }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.username = userName;
     }
 
     public String getPassCode() {
-        return passCode;
+        return passcode;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "user_Id=" + user_Id +
-                ", fullName='" + fullName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", passCode='" + passCode + '\'' +
+                ", fullName='" + fullname + '\'' +
+                ", userName='" + username + '\'' +
+                ", passCode='" + passcode + '\'' +
                 ", is_Approver=" + is_Approver +
                 ", department=" + department +
                 '}';
     }
 
     public void setPassCode(String passCode) {
-        this.passCode = passCode;
+        this.passcode = passCode;
     }
 
     public int getIs_Approver() {
