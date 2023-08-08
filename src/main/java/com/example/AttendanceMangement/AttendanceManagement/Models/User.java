@@ -2,6 +2,8 @@ package com.example.AttendanceMangement.AttendanceManagement.Models;
 
 import jakarta.persistence.*;
 
+import java.util.Optional;
+
 @Table(name="intern_users")
 @Entity
 public class User {
@@ -15,6 +17,14 @@ public class User {
     @OneToOne
     @JoinColumn(name="department_id")
     private Department department;
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
     public User() {
     }
@@ -78,4 +88,5 @@ public class User {
 
         this.is_Approver = is_Approver;
     }
+
 }
